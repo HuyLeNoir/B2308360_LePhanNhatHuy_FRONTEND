@@ -1,11 +1,7 @@
 <template>
-    <div v-if="contact" class="page">
+    <div class="page">
         <h4>Hiệu chỉnh Liên hệ</h4>
-        <ContactForm
-            :contact="contact"
-            @submit:contact="updateContact"
-            @delete:contact="deleteContact"
-        />
+        <ContactForm :contact="contact" @submit:contact="InsertContact" />
         <p>{{ message }}</p>
     </div>
 </template>
@@ -18,7 +14,7 @@ export default {
     },
     data() {
         return {
-            contact: null,
+            contact: {},
             message: "",
         };
     },
